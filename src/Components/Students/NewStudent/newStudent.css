@@ -1,0 +1,48 @@
+.title{
+    color: #2b356b;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.ns{
+    padding:20px;
+    padding-left: 40px;
+    
+}
+
+.form a{
+    color: #2b356b;
+}
+
+.form input{
+    border-color: #2b356b;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    padding: 5px;
+
+
+}
+
+.form td{
+    padding:15px;
+    
+}
+
+.addStudent{
+    border-color: #2b356b;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+   padding-left: 45px;
+   padding-right: 45px;
+   background-color: #7989e4
+  
+}
+
+.addStudent:hover{
+    transition: all 0.3s;
+    background-color:#2b356b;
+    color: #DDD;
+}
