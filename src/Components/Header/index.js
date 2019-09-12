@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './header.css';
+import {Link} from 'react-router-dom';
 
 class Header extends Component {
     constructor(props) {
@@ -25,7 +26,7 @@ class Header extends Component {
         return (<div className='header'>
             <div className='company'>
 
-            <img  alt="avatar" src={require('D:/Google Drive/Private Classes/Software/clone_privateclasses/privateclasses/src/assets/logo.png')} />
+            <Link to='/'><img  alt="avatar" src={require('D:/Google Drive/Private Classes/Software/clone_privateclasses/privateclasses/src/assets/logo.png')} /></Link>
 
             </div>
 
