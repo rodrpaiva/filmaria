@@ -15,19 +15,19 @@ class Classes extends Component {
         return (
             <div className="classes">
                 <Link to={'/Classes/new'}>
-                    <img src={require('D:/Google Drive/Private Classes/Software/privateclasses/src/assets/addClass.png')} />
+                    <img src={require('D:/Google Drive/Private Classes/Software/clone_privateclasses/privateclasses/src/assets/addClass.png')} />
                 </Link>
                 <Link to={'/Classes/update'}>
-                    <img src={require('D:/Google Drive/Private Classes/Software/privateclasses/src/assets/updateClass.png')} />
+                    <img src={require('D:/Google Drive/Private Classes/Software/clone_privateclasses/privateclasses/src/assets/updateClass.png')} />
                 </Link>
                 <Link to={'/Classes/search'}>
-                    <img src={require('D:/Google Drive/Private Classes/Software/privateclasses/src/assets/searchClass.png')} />
+                    <img src={require('D:/Google Drive/Private Classes/Software/clone_privateclasses/privateclasses/src/assets/searchClass.png')} />
                 </Link>       
                 <Link to={'/Classes/register-class-day'}>
-                    <img src={require('D:/Google Drive/Private Classes/Software/privateclasses/src/assets/registerClassDay.png')} />
+                    <img src={require('D:/Google Drive/Private Classes/Software/clone_privateclasses/privateclasses/src/assets/registerClassDay.png')} />
                 </Link>    
                 <Link to={'/Classes/register-grades'}>
-                    <img src={require('D:/Google Drive/Private Classes/Software/privateclasses/src/assets/registerGrades.png')} />
+                    <img src={require('D:/Google Drive/Private Classes/Software/clone_privateclasses/privateclasses/src/assets/registerGrades.png')} />
                 </Link>    
                 
                 

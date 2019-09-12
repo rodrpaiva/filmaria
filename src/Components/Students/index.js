@@ -23,13 +23,13 @@ class Students extends Component {
           
         
                 <Link  to={'/Students/new'}>
-                    <img src={require('D:/Google Drive/Private Classes/Software/privateclasses/src/assets/addStudent.PNG')}/>
+                    <img src={require('D:/Google Drive/Private Classes/Software/clone_privateclasses/privateclasses/src/assets/addStudent.PNG')}/>
                 </Link>
                 <Link to={'/Students/update'}>
-                <img src={require('D:/Google Drive/Private Classes/Software/privateclasses/src/assets/updateStudent.PNG')}/>
+                <img src={require('D:/Google Drive/Private Classes/Software/clone_privateclasses/privateclasses/src/assets/updateStudent.PNG')}/>
                 </Link>
                 <Link to={'/Students/search'}>
-                <img src={require('D:/Google Drive/Private Classes/Software/privateclasses/src/assets/searchStudent.png')}/>
+                <img src={require('D:/Google Drive/Private Classes/Software/clone_privateclasses/privateclasses/src/assets/searchStudent.png')}/>
                 </Link>
           
         </div>
