@@ -17,6 +17,7 @@ import SearchClass from './Components/Classes/SearchClass';
 import UpdateClass from './Components/Classes/UpdateClass';
 import RegisterClassDay from './Components/Classes/RegisterClassDay';
 import RegisterGrades from './Components/Classes/RegisterGrades';
+import Save from './Components/Save';
 
 const Routes = () => {
 
@@ -55,7 +56,7 @@ const Routes = () => {
                 <Route exact path="/Financial" component={Financial} />
                 <Route exact path="/Settings" component={Settings} />
 
-                
+                <Route path="/save" component={Save} />
                 <Route path="*" component={Error} />
 
 

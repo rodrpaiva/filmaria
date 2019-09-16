@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './newStudent.css';
+import axios from 'axios';
 
 
 
@@ -12,10 +13,11 @@ class NewStudent extends Component {
             email: '',
             phone: '',
             address: '',
-            number: ''
+            number: '',
+            teste: ''
         }
 
-       
+
         this.changeName = this.changeName.bind(this);
         this.changeNumber = this.changeNumber.bind(this);
         this.changePhone = this.changePhone.bind(this);
@@ -23,29 +25,30 @@ class NewStudent extends Component {
         this.changeEmail = this.changeEmail.bind(this);
         this.changeAddress = this.changeAddress.bind(this);
         this.addStudent = this.addStudent.bind(this);
-        this.createFile = this.createFile.bind(this);
+        this.saveStudent = this.saveStudent.bind(this);
 
     }
 
-  
 
 
 
-    createFile() {
-        var textFile = null;
-        var data = new Blob(["aaaaa"], { type: 'text/plain' });
 
+    saveStudent() {
 
-        var file = new File([data], "teste.txt", { type: "text/plain" });
-
+        // Requisições POST, note há um parâmetro extra indicando os parâmetros da requisição
+        axios.post('http://localhost:8080/save', { firstName: 'Rodrigo', lastName: 'Paiva' })
+            .then(function (response) {
+                console.log('salvo com sucesso')
+            });
 
 
     }
 
     addStudent() {
         if (this.state.address !== '' && this.state.cpf !== '' && this.state.email !== '' && this.state.name !== '' && this.state.number !== '' && this.state.phone !== '') {
-            this.createFile();
-            alert("Done!");
+            this.salveStudent();
+
+
         } else {
             alert("Oops, there's a gap in blank");
         }
