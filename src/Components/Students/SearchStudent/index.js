@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './searchStudent.css';
+import Axios from 'axios';
 
 class SearchStudent extends Component {
     constructor(props) {
@@ -8,31 +9,37 @@ class SearchStudent extends Component {
         this.state = {
             name: '',
             cpf: '',
-            student: 'Student'
+            students: []
+
         };
-        this.changeName = this.changeName.bind(this);
-        this.changeCpf = this.changeCpf.bind(this);
+        this.changeHandler = this.changeHandler.bind(this);
         this.searchStudent = this.searchStudent.bind(this);
 
     }
-
-    changeName(e) {
-        this.setState({ name: e.target.value });
+    changeHandler(e) {
+        this.setState({ [e.target.name]: e.target.value });
     }
 
-
-    changeCpf(e) {
-        this.setState({ cpf: e.target.value });
+    componentDidMount() {
+        Axios.get('https://jsonplaceholder.typicode.com/users')
+            .then(response => {
+                console.log(response);
+                this.setState({ students: response.data });
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
+
 
     searchStudent() {
         if (this.state.name !== '' || this.state.cpf !== '') {
 
 
             //ao ler cpf, pegar nome no banco e atualizar state name
-           this.setState({student: this.state.name});
-           
-           // alert("Done!");
+            this.setState({ student: this.state.name });
+
+            // alert("Done!");
         } else {
             alert("Oops, there's a gap in blank");
         }
@@ -41,38 +48,48 @@ class SearchStudent extends Component {
     render() {
         return (<div className='ss'>
 
-            <table border='0'>
-                <tbody>
-                    <tr>
-                        <td>
+
+            <div className='search'>
+                <h2 className='title'>Students</h2><br />
+                <input name='name' value={this.state.name} onChange={this.changeHandler} />
+                <a className='searchStudent'> Search</a>
+                <div className='list'>
+
+                    <table  className='studentsList'>
+                        <thead>
+                        <tr className='tableHead'>
+                                <td>
+                                    <a>Name</a>
+                                                </td>
+                                <td>
+                                   <a> E-mail</a>
+                                                </td>
+                                <td>
+                                   <a>Options</a> 
+                                                </td>
+                                                
+                            </tr>
+                        </thead>
+                        <tbody>
                             
+                            <tr>
+                                {this.state.students.length ?
+                                    this.state.students.map(user => <div key={user.id}>{user.name}</div>) :
+                                    null
+                                }
+                                <td>
+                                    {this.state.students.length ?
+                                        this.state.students.map(user => <div key={user.id}>{user.email}</div>) :
+                                        null
+                                    }
+                                </td>
+                            </tr>
 
-                            <div className='search'>
-                            <h2 className='title'>Search Student</h2><br />
-                                <form className='form'>
-                                    <a>Search by:</a><br /><br />
-                                    <a>Name</a><br />
-                                    <input onChange={this.changeName} type='text' name='name' value={this.state.name} /><br />
-                                    <br /><a>or</a><br />
-                                    <br /> <a>CPF</a><br />
-                                    <input onChange={this.changeCpf} type='text' name='cpf' value={this.state.cpf} /><br />
-                                    <br /><br /><a className='searchStudent' onClick={this.searchStudent}>Search</a>
-                                </form>
-                            </div>
-                        </td>
-                        <td>
-                            <div className='show'>
+                        </tbody>
+                    </table>
+                </div>
 
-                                <h2 className='title'>{this.state.student}'s Information</h2>
-                                <textarea readOnly='readOnly' value='info'/>
-                                
-                        </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-
+            </div>
 
 
 

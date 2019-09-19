@@ -12,26 +12,47 @@
 }
 
 .search{
-    margin-top: -120px;
+    margin-top: 10px;
 padding-right:100px;
 padding-bottom: 60px;
 }
 
-.show{
-    padding-left: 100px;
-    padding-bottom: 60px;
+
+
+.studentsList{
+    border-style: solid;
+    border-width: 2px;
+    padding: 10px;
+    border-radius: 3px;
+    width: 700px;
+    border-color: #2b356b;
+    
+    
+
 }
 
-.form a{
+
+
+
+
+
+
+
+
+.search a{
     color: #2b356b;
 }
 
-.form input{
+.search input{
     border-color: #2b356b;
     border-style: solid;
     border-width: 1px;
     border-radius: 3px;
-    padding: 5px;
+    padding: 10px;
+    width: 400px;
+    margin-right: 92px;
+    
+    margin-bottom: 15px;
 
 
 }
@@ -57,13 +78,3 @@ padding-bottom: 60px;
     color: #DDD;
 }
 
-.show textarea{
-border-radius: 10px;
-height: 400px;
-width: 700px;
-background-color: rgb(241, 241, 241);
-border-color: #2b356b;
-border-width: 1px;
-resize: none;
-
-}

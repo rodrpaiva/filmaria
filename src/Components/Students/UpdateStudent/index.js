@@ -14,14 +14,9 @@ class UpdateStudent extends Component{
         }
 
        
-        this.changeName = this.changeName.bind(this);
-        this.changeNumber = this.changeNumber.bind(this);
-        this.changePhone = this.changePhone.bind(this);
-        this.changeCpf = this.changeCpf.bind(this);
-        this.changeEmail = this.changeEmail.bind(this);
-        this.changeAddress = this.changeAddress.bind(this);
+        this.changeHandler = this.changeHandler.bind(this);
         this.updateStudent = this.updateStudent.bind(this);
-        this.createFile = this.createFile.bind(this);
+        
 
     }
 
@@ -29,49 +24,19 @@ class UpdateStudent extends Component{
 
 
 
-    createFile() {
-        var textFile = null;
-        var data = new Blob(["aaaaa"], { type: 'text/plain' });
-
-
-        var file = new File([data], "teste.txt", { type: "text/plain" });
-
-
-
-    }
+  
 
     updateStudent() {
         if (this.state.address !== '' && this.state.cpf !== '' && this.state.email !== '' && this.state.name !== '' && this.state.number !== '' && this.state.phone !== '') {
-            this.createFile();
+            
             alert("Done!");
         } else {
             alert("Oops, there's a gap in blank");
         }
     }
 
-    changeName(e) {
-        this.setState({ name: e.target.value });
-    }
-
-
-    changeCpf(e) {
-        this.setState({ cpf: e.target.value });
-    }
-
-    changeEmail(e) {
-        this.setState({ email: e.target.value });
-    }
-
-    changePhone(e) {
-        this.setState({ phone: e.target.value });
-    }
-
-    changeAddress(e) {
-        this.setState({ address: e.target.value });
-    }
-
-    changeNumber(e) {
-        this.setState({ number: e.target.value });
+    changeHandler(e){
+        this.setState({[e.target.name]: e.target.value});
     }
 
 
@@ -85,19 +50,19 @@ class UpdateStudent extends Component{
                         <tr>
                             <td>
                                 <a>Name</a><br />
-                                <input type='text' onChange={this.changeName} value={this.state.name} name='name' /><br />
+                                <input type='text' onChange={this.changeHandler} value={this.state.name} name='name' /><br />
                                 <br /><a>CPF</a><br />
-                                <input type='text' onChange={this.changeCpf} value={this.state.cpf} name='cpf' /><br />
+                                <input type='text' onChange={this.changeHandler} value={this.state.cpf} name='cpf' /><br />
                                 <br /><a>Email</a><br />
-                                <input type='email' onChange={this.changeEmail} value={this.state.email} name='email' /><br />
+                                <input type='email' onChange={this.changeHandler} value={this.state.email} name='email' /><br />
                             </td>
                             <td>
                                 <br /><a>Phone Number</a><br />
-                                <input type='text' onChange={this.changePhone} value={this.state.phone} name='phone' /><br />
+                                <input type='text' onChange={this.changeHandler} value={this.state.phone} name='phone' /><br />
                                 <br /><a>Address</a><br />
-                                <input type='text' onChange={this.changeAddress} value={this.state.address} name='address' /><br />
+                                <input type='text' onChange={this.changeHandler} value={this.state.address} name='address' /><br />
                                 <br /><a>Number</a><br />
-                                <input type='text' onChange={this.changeNumber} value={this.state.number} name='number' /><br />
+                                <input type='text' onChange={this.changeHandler} value={this.state.number} name='number' /><br />
                                 <br />
                             </td>
                         </tr>
